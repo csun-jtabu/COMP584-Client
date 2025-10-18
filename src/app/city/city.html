@@ -1,1 +1,26 @@
-<p>city works!</p>
+<h1>Countries</h1>
+<table class ="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Country ID</th>
+        <th>Name</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Population</th>
+        <th>Country</th>
+    </thead>
+    <tbody>
+        @for (city of cities; track $index) 
+        {   
+            <tr>
+                <td>{{ city.id }}</td>
+                <td>{{ city.countryid }}</td>
+                <td>{{ city.name }}</td>
+                <td>{{ city.longitude }}</td>
+                <td>{{ city.latitude }}</td>
+                <td>{{ city.population }}</td>
+                <td>{{ city.country }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
