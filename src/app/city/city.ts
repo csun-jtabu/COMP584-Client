@@ -2,20 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CityData } from './city-data';
 import { environment } from '../../environments/environment';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-city',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './city.html',
   styleUrl: './city.scss'
 })
 export class City {
-  cities: CityData[] = [];
+  cities$: Observable<CityData[]>;
 
-  constructor(http: HttpClient)
+  constructor(private http: HttpClient)
   {
-    http.get<CityData[]>(environment.apiUrl + "api/cities").subscribe(result => {
-      this.cities = result;
-    });
+    this.cities$ = http.get<CityData[]>(environment.apiUrl + "api/cities")
   }
 }

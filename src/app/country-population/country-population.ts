@@ -4,10 +4,12 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-country-population',
-  imports: [RouterLink],
+  imports: [RouterLink, AsyncPipe],
   templateUrl: './country-population.html',
   styleUrl: './country-population.scss'
 })
