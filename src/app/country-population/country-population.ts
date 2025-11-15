@@ -15,7 +15,8 @@ import { AsyncPipe } from '@angular/common';
 })
 
 export class CountryPopulation implements OnInit {
-  CountryPopulation!: PopulationData;
+  // CountryPopulation!: PopulationData;
+  CountryPopulation!: PopulationData
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute)
   {
@@ -23,6 +24,9 @@ export class CountryPopulation implements OnInit {
 
   ngOnInit(): void {
     let idParam = this.activatedRoute.snapshot.paramMap.get('id');
+    // this.http.get<PopulationData>(`${environment.apiUrl}api/Countries/population/${idParam}`).subscribe(result => {
+    //   this.CountryPopulation = result;
+    // });
     this.http.get<PopulationData>(`${environment.apiUrl}api/Countries/population/${idParam}`).subscribe(result => {
       this.CountryPopulation = result;
     });

@@ -1,10 +1,8 @@
 <h1>Country Population</h1>
 
-@if(CountryPopulation)
-{
-    <p>{{CountryPopulation.name}} has a population of {{CountryPopulation.population}}</p>
-}
+
+<p>{{CountryPopulation.name}} has a population of {{CountryPopulation.population}}</p>
 
 <div>
-    <a [routerLink]="['/Countries']">Countries</a>
+    <a [routerLink]="['/country']">Countries</a>
 </div>
